@@ -18,4 +18,4 @@ while True:
     
     # Pārbauda kļūdas, piemēram, tukšs input)
     except Exception as e:
-        print(f"Kļūda: {e}")  # Izvade: Kļūdas ziņojums, ja tiek izsists izņēmums
+        print(f"Kļūda: {e}")
