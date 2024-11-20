@@ -1,18 +1,21 @@
 from langdetect import detect
 
-# Loop to accept multiple inputs
 while True:
-    # Ask for user input
+    # Lietotājs ievada tekstu
     text = input("Ievadiet tekstu (raksti atā, lai pārtrauktu): ")
     
-    # Exit condition
+    # Vai lietotājs grib beigt ciklu (ievadot "ata" vai "atā")
     if text.lower() == "ata" or text.lower() == "atā":
         print("atā")
         break
 
     try:
-        # Detect language
+        # Nosakām valodu, izmantojot langdetect
         detected_language = detect(text)
+        
+        # Izvada valodu
         print(f"valoda: {detected_language}")
+    
+    # Pārbauda kļūdas, piemēram, tukšs input)
     except Exception as e:
-        print(f"Error detecting language: {e}")
+        print(f"Kļūda: {e}")  # Izvade: Kļūdas ziņojums, ja tiek izsists izņēmums
