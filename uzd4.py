@@ -1,10 +1,11 @@
-#Pagaidām nestrādā
+#NAV LATVIEŠU VALODĀĀĀĀ
 
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-from transformers import pipeline
+nltk.download('vader_lexicon')
 
-# Use a pre-trained Latvian sentiment analysis model
-sentiment_analyzer = pipeline("sentiment-analysis", model="AiLab-IMCS-UL/lvbert")
+sia = SentimentIntensityAnalyzer() 
 
 while True:
     text = input("Ievadiet tekstu (raksti 'atā', lai pārtrauktu): ")
@@ -12,13 +13,12 @@ while True:
         print("Uz redzēšanos!")
         break
 
-    # Analyze sentiment
-    result = sentiment_analyzer(text)
+    sentiment_dict = sia.polarity_scores(text)
+    compound = sentiment_dict['compound']
 
-    sentiment = result[0]['label']
-    if sentiment == 'LABEL_1':  # Negative sentiment
+    if compound >= 0.05:
+        print("Emocionālais noskaņojs: Pozitīvs")
+    elif compound <= -0.05:
         print("Emocionālais noskaņojums: Negatīvs")
-    elif sentiment == 'LABEL_2':  # Neutral sentiment
+    else:
         print("Emocionālais noskaņojums: Neitrāls")
-    else:  # Positive sentiment
-        print("Emocionālais noskaņojums: Pozitīvs")
