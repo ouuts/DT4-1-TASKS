@@ -5,18 +5,21 @@ import re
 def biezzums(text):
     # .lower izdarā tā lai Kaķis un kaķis skaitas kopā
     text = text.lower()
-    
+
     # izmantojam TreebankWordTokenizer
     tokenizer = TreebankWordTokenizer()
     words = tokenizer.tokenize(text)
-    
+
     # Izfiltrē punktus un komatus
     words = [word for word in words if word not in ['.', ',']]
-    
+
     # Saskaitā vārdu biežumu
     return dict(Counter(words))
 
-text = "Mākoņainā dienā kaķis sēdēja uz palodzes. Kaķis domāja, kāpēc debesis ir pelēgas. Kaķis gribēja redzēt sauli, bet saule slēpās aiz mākoņiem."
+text = input("Ievadi tekstu (atstāj tukšu priekš piemēra):")
+if text == "":
+    text = "Mākoņainā dienā kaķis sēdēja uz palodzes. Kaķis domāja, kāpēc debesis ir pelēgas. Kaķis gribēja redzēt sauli, bet saule slēpās aiz mākoņiem."
+    print(text)
 
 # analizē textu izmantojot funkciju biezzums
 atbilde = biezzums(text)
