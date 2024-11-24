@@ -1,26 +1,25 @@
 from transformers import pipeline
 from deep_translator import GoogleTranslator
 
-# Initialize the summarization pipeline
+
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
-# Input the article
-raksts = input("Ievadi rakstu (atstāj tukšu piemēram):")
-if raksts == "":
+def summarize_and_translate(text):
+
+    translated_to_en = GoogleTranslator(source='lv', target='en').translate(text)
+    summary = summarizer(translated_to_en, min_length=10, max_length=30)
+    translated_to_lv = GoogleTranslator(source='en', target='lv').translate(summary[0]['summary_text'])
+    return translated_to_lv
+
+raksts = input("Ievadi rakstu (atstāj tukšu piemēram): ").strip()
+if not raksts:
     raksts = """
     Latvija ir valsts Baltijas reģionā. Tās galvaspilsēta ir Rīga,
     kas ir slavena ar savu vēsturisko centru un skaistajām ēkām. Latvija robežojas ar Lietuvu, Igauniju un Krieviju, 
     kā arī tai ir piekļuve Baltijas jūrai. Tā ir viena no Eiropas Savienības dalībvalstīm.
     """
+    print(f"Piemērs: {raksts}")
 
-# Translate the input article to English
-translated_to_en = GoogleTranslator(source='lv', target='en').translate(raksts)
+final_summary = summarize_and_translate(raksts)
 
-# Summarize the translated article
-summary = summarizer(translated_to_en, min_length=10, max_length=30)
-
-# Translate the summary back to Latvian
-translated_to_lv = GoogleTranslator(source='en', target='lv').translate(summary[0]['summary_text'])
-
-# Print the final summary in Latvian
-print(translated_to_lv)
+print(f"Kopsavilkums: {final_summary}")
