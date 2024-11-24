@@ -20,7 +20,7 @@ while True:
         if not teksts:
             print("Lūdzu, ievadiet kādu tekstu.")
             continue
-        tulkojums = translate_text('lv', 'en', teksts)
+        tulkojums = translate_text("lv", "en", teksts)
         print(f"\nTulkojums angļu valodā: {tulkojums}")
         
     elif izvele == "2":
@@ -28,7 +28,7 @@ while True:
         if not teksts:
             print("Lūdzu, ievadiet kādu tekstu.")
             continue
-        tulkojums = translate_text('en', 'lv', teksts)
+        tulkojums = translate_text("en", "lv", teksts)
         print(f"\nTulkojums latviešu valodā: {tulkojums}")
         
     else:
