@@ -4,14 +4,14 @@
 
 ## Instalācija
 
-Lai instalētu nepieciešamās bibliotēkas, palaidiet šādas komandas:
+#### Lai instalētu nepieciešamās bibliotēkas, palaidiet šādas komandas:
 
 ```
 pip install nltk spacy transformers torch deep_translator
 python -m spacy download en_core_web_sm
 python -m spacy download en_core_web_md
 ```
-Programmu apraksts
+#### Programmu apraksts
 
     uzd1.py: Vārdu biežuma skaitīšana tekstā.
 
