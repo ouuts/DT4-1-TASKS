@@ -7,7 +7,7 @@ def biezzums(text):
     text = text.lower()
     tokenizer = TreebankWordTokenizer()
     words = tokenizer.tokenize(text)
-    words = [word for word in words if word not in ['.', ',']]
+    words = [word for word in words if word not in [".", ","]]
     return dict(Counter(words))
 
 text = input("Ievadi tekstu (atstāj tukšu priekš piemēra): ").strip()
