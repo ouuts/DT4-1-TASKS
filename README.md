@@ -1,18 +1,9 @@
 # DT4-1
 
 ## Apraksts
-Šis projekts ietver 10 Python skriptus, kas demonstrē dažādas teksta apstrādes, tulkošanas un mašīnmācīšanās funkcionalitātes. Projektā tiek izmantotas modernas NLP (dabiskās valodas apstrādes) bibliotēkas un rīki.
+Šis projekts ietver 10 Python skriptus. Projektā tiek izmantotas NLP (dabiskās valodas apstrādes) bibliotēkas.
 
 **Piezīme**: Dažas NLP bibliotēkas, piemēram, `spaCy`, var nebūt saderīgas ar Python 3.13. Lai izvairītos no problēmām, **ieteicams izmantot Python 3.12**.
-
----
-
-## Funkcijas
-- Vārdu biežuma analīze.
-- Valodas noteikšana tekstam.
-- Semantiskās līdzības aprēķins starp tekstiem.
-- Sentimentu analīze un teksta tulkošana.
-- Automātiska teksta ģenerēšana un rezumēšana.
 
 ---
 
@@ -30,11 +21,7 @@
   - `scikit-learn`
   - `torch`
   - `numpy`
-
-### Instalācijas soļi
-1. Klonējiet repozitoriju:
-   ```bash
-   git clone https://github.com/ouuts/DT4-1.git
+- Instalēt var ar `pip install`
 
 ## Uzdevumi un prasības
 
