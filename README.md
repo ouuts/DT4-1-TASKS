@@ -1,7 +1,7 @@
 # Python Programmas
 
 ### 10 Python programmas, kurās tiek izmantotas NLP biliotēkas. Šeit ir instalācijas instrukcijas nepieciešamajām bibliotēkām.
-
+### Ieteicama 3.12 python versija, jo 3.13+ neatbalsta spacy un iespējams citas bobliotēkas.
 ## Instalācija
 
 #### Lai instalētu nepieciešamās bibliotēkas, palaidiet šādas komandas:
