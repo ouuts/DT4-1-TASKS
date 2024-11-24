@@ -35,7 +35,8 @@
 1. Klonējiet repozitoriju:
    ```bash
    git clone https://github.com/ouuts/DT4-1.git
-## Uzdevumi un prasības
+
+Uzdevumi un prasības
 1. uzd1.py
 
 Funkcija: Vārdu biežuma aprēķins tekstā, ignorējot pieturzīmes un lielos/malos burtus.
