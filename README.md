@@ -7,7 +7,7 @@
 #### Lai instalētu nepieciešamās bibliotēkas, palaidiet šādas komandas:
 
 ```
-pip install nltk spacy transformers torch deep_translator
+pip install nltk spacy transformers torch deep_translator langdetect
 python -m spacy download en_core_web_sm
 python -m spacy download en_core_web_md
 ```
