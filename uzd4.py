@@ -6,18 +6,16 @@ nltk.download('vader_lexicon')
 sia = SentimentIntensityAnalyzer()
 
 while True:
-    lat_teksts = str(input("Ievadiet tekstu (raksti 'atā', lai pārtrauktu): "))
+    teksts = str(input("Ievadiet tekstu (raksti 'atā', lai pārtrauktu): "))
     
-    if lat_teksts.lower() in ["atā", "ata"]:
+    if teksts.lower() in ["atā", "ata"]:
         print("Uz redzēšanos!")
         break
-        
-    # Translate from Latvian to English
-    eng_teksts = GoogleTranslator(source='lv', target='en').translate(lat_teksts)
-    print(f"Tulkojums uz angļu: {eng_teksts}")
+
+    text = GoogleTranslator(source='lv', target='en').translate(teksts)
+    print(f"Tulkojums uz angļu: {text}")
     
-    # Analyze sentiment
-    sentiment_dict = sia.polarity_scores(eng_teksts)
+    sentiment_dict = sia.polarity_scores(text)
     compound = sentiment_dict['compound']
     
     if compound >= 0.05:
