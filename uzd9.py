@@ -12,12 +12,10 @@ def generate_story(sakums):
 
 while True:
 
-    sakums = input("Ievadiet sākuma frāzi (vai 'exit' lai beigtu): ").strip()
-    
-    if sakums.lower() == 'exit':
+    sakums = input("Ievadiet sākuma frāzi (vai 'ata' lai beigtu): ").strip()
+    if sakums.lower() == 'ata':
         print("Programma beigta!")
         break
-        
     if not sakums:
         sakums = "Reiz kādā tālā zemē"
         print(f"Izmantojam piemēra sākuma frāzi: {sakums}")
