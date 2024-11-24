@@ -2,20 +2,15 @@ from langdetect import detect
 
 while True:
     # Lietotājs ievada tekstu
-    text = input("Ievadiet tekstu (raksti atā, lai pārtrauktu): ")
+    text = input("Ievadiet tekstu (raksti 'atā', lai pārtrauktu): ").strip()
     
-    # Vai lietotājs grib beigt ciklu (ievadot "ata" vai "atā")
-    if text.lower() == "ata" or text.lower() == "atā":
+    # Vai lietotājs grib beigt ciklu (ievadot "atā")
+    if text.lower() == "atā":
         print("atā")
         break
 
-    try:
-        # Nosakām valodu, izmantojot langdetect
-        detected_language = detect(text)
-        
-        # Izvada valodu
-        print(f"valoda: {detected_language}")
+    # Nosakām valodu, izmantojot langdetect
+    detected_language = detect(text)
     
-    # Pārbauda kļūdas, piemēram, tukšs input)
-    except Exception as e:
-        print(f"Kļūda: {e}")
+    # Izvada valodu
+    print(f"valoda: {detected_language}")
