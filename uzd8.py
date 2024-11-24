@@ -16,7 +16,6 @@ def find_entities(text):
         elif ent.label_ == "ORG":
             lat_ent = GoogleTranslator(source='en', target='lv').translate(ent.text)
             organizacijas.append(lat_ent)
-            
     return personas, organizacijas
 
 while True:
@@ -26,7 +25,6 @@ while True:
     if text.lower() == 'exit':
         print("Programma beigta!")
         break
-        
     if not text:
         text = "Valsts prezidents Egils Levits piedalījās pasākumā, ko organizēja Latvijas Universitāte."
         print(f"Izmantojam piemēra tekstu: {text}")
