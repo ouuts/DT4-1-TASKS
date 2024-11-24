@@ -1,6 +1,6 @@
 from transformers import pipeline
 
-# Load a pre-trained summarization model
+
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 raksts = input("Ievadi rakstu (atstāj tukšu piemēram):")
