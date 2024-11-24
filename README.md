@@ -34,7 +34,7 @@
 ### Instalācijas soļi
 1. Klonējiet repozitoriju:
    ```bash
-   git clone https://github.com/your-username/DT4-1.git
+   git clone https://github.com/ouuts/DT4-1.git
 ## Uzdevumi un prasības
 1. uzd1.py
 
